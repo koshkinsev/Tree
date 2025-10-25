@@ -1,0 +1,7 @@
+local old; old = hookfunction(loadstring, newcclosure(function(src, ...)
+    if src:find("admin") then
+        writefile("admin_src.lua", src)
+        return old(src, ...)
+    end
+    return old(src, ...)
+end))
